@@ -9,18 +9,23 @@
   AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
 
   function ToBuyController (ShoppingListCheckOffService) {
-    var itemAdder = this;
-    itemAdder.getListToBuy = function () {
-      return ShoppingListCheckOffService.getList();
+    var toBuy = this;
+    toBuy.nameOfTable = "toBuyList";
+    toBuy.listOfProducts = ShoppingListCheckOffService.getProducts(toBuy.nameOfTable);
+    toBuy.buyProduct = function (productIndex) {
+      ShoppingListCheckOffService.removeProduct(productIndex);
     }
   }
   function AlreadyBoughtController (ShoppingListCheckOffService) {
-    var bought = this;
-    bought.list = [];
+    var alreadyBought = this;
+    alreadyBought.nameOfTable = "boughtList";
+    alreadyBought.listOfProducts = ShoppingListCheckOffService.getProducts(alreadyBought.nameOfTable);
   }
+
+
   function ShoppingListCheckOffService () {
-    var toBuy = this;
-    toBuy.list = [
+    var service = this;
+    var toBuyList = [
       { name: "cookies", quantity: 100 },
       { name: "potatoes", quantity: 1000 },
       { name: "pasta", quantity: 200 },
@@ -28,8 +33,16 @@
       { name: "nuts", quantity: 100 },
       { name: "strawberry", quantity: 10 }
     ];
-    toBuy.getList = function () {
-      return toBuy.list;
+    var boughtList = [];
+    service.addProductsToBoughtList = function (product) {
+      boughtList.push(product);
+    }
+    service.getProducts = function (nameOfTable) {
+      return (nameOfTable === 'toBuyList') ? toBuyList : boughtList;
+    }
+    service.removeProduct = function (productIndex) {
+      boughtList.push(toBuyList[productIndex]);
+      toBuyList.splice(productIndex, 1);
     }
   }
 })();
