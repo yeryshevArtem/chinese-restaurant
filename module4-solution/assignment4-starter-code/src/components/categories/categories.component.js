@@ -1,8 +1,8 @@
 (function () {
   'use strict';
-  angular.module('')
+  angular.module('data')
   .component('categories', {
-    templateUrl: './categories.template.html',
+    templateUrl: './src/components/categories/categories.template.html',
     bindings: {
       categoriesList: '<'
     }

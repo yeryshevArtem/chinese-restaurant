@@ -1,3 +1,6 @@
-<ul ng-repeat="category in categories.categoriesList">
-  <li><p>{{category.short_name}}</p></li>
+<h3>Welcome</h3>
+<ul>
+  <li ng-repeat="category in $ctrl.categoriesList">
+    {{ category.name }}
+  </li>
 </ul>

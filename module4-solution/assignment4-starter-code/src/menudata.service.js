@@ -14,21 +14,21 @@
         url: 'https://davids-restaurant.herokuapp.com/categories.json'
       };
       return $http(config).then(function (result) {
-        console.log(result.data);
-        return result.data;
+        var categories = result.data;
+        return categories;
       });
     }
-    // menuData.getItemsForCategory = function (categoryShortName) {
-    //   var config = {
-    //     method: 'GET',
-    //     url: 'https://davids-restaurant.herokuapp.com/menu_items.json',
-    //     params: {
-    //       category: categoryShortName
-    //     }
-    //   };
-    //   return $http(config).then(function (result) {
-    //     //TODO
-    //   });
-    // }
+    menuData.getItemsForCategory = function (categoryShortName) {
+      var config = {
+        method: 'GET',
+        url: 'https://davids-restaurant.herokuapp.com/menu_items.json',
+        params: {
+          category: categoryShortName
+        }
+      };
+      return $http(config).then(function (result) {
+        return result;
+      });
+    }
   }
 })();

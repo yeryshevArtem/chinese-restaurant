@@ -13,15 +13,15 @@
       url: '/home',
       templateUrl: './src/home.template.html'
     })
-    // .state('categories', {
-    //   url: '/categories',
-    //   templateUrl: './src/categories/categories.template.html',
-    //   controller: 'MenudataController as categories',
-    //   resolve: {
-    //     categoriesList: ['MenuDataService', function (MenuDataService) {
-    //       return MenuDataService.getAllCategories();
-    //     }]
-    //   }
-    // });
+    .state('categories', {
+      url: '/categories',
+      templateUrl: './src/main-page.template.html',
+      controller: 'DataController as data',
+      resolve: {
+        categoriesList: ['MenuDataService', function (MenuDataService) {
+          return MenuDataService.getAllCategories();
+        }]
+      }
+    });
   }
 })();
