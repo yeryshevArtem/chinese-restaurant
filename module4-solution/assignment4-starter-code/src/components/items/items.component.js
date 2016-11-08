@@ -1,8 +1,15 @@
 (function () {
   'use strict';
-  angular.module('data')
+  angular.module('MenuApp')
   .component('items', {
-    templateUrl: 'templates/...'
+    templateUrl: './src/components/items/items.template.html',
+    controller: ItemsController,
+    controllerAs: '$ctrl',
+    bindings: {
+      itemsList: '<'
+    }
   });
-
+  function ItemsController() {
+    var $ctrl = this;
+  }
 })();

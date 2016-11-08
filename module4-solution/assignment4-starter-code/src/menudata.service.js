@@ -27,7 +27,8 @@
         }
       };
       return $http(config).then(function (result) {
-        return result;
+        var items = result.data;
+        return items;
       });
     }
   }
