@@ -1,0 +1,12 @@
+<div class="categories-container">
+  <div class="list-group">
+    <a
+      href="#"
+      class="list-group-item"
+      ng-repeat="category in $ctrl.categoriesList"
+      ui-sref="categories.items({shortNameOfCategory: category.short_name})"
+      ui-sref-active="active">
+      <h4 class="list-group-item-heading">{{ category.name }}</h4>
+    </a>
+  </div>
+</div>
