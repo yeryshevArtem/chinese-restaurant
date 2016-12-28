@@ -1,5 +1,13 @@
+body,
+a h4 {
+  font-family: 'Kaushan Script', sans-serif;
+}
+header {
+  margin-bottom: 5em;
+}
 h1 {
   margin-bottom: 30px;
+  font-family: 'Permanent Marker', sans-serif;
 }
 input[type="text"] {
   width: 200px;
@@ -48,6 +56,19 @@ input[type="text"] {
 .alert {
   font-weight: bold;
   color: red;
+}
+.container h1 {
+  text-align: center;
+  font-style: italic;
+}
+.categories-container {
+  width: 700px;
+  max-width: 700px;
+  margin-right: 1em;
+}
+.items-container,
+.categories-container {
+  float: left;
 }
 @-webkit-keyframes load8 {
   0% {

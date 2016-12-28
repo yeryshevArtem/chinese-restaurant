@@ -8,6 +8,5 @@
   function MenuAppController(MenuDataService, categoriesList) {
     var menuapp = this;
     menuapp.categoriesList = categoriesList;
-    // menuapp.itemsList = MenuDataService.getItemsForCategory($stateParams.shortNameOfCategory);
   }
 })();

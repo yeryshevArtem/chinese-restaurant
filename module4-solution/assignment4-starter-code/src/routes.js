@@ -6,7 +6,6 @@
   RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
   function RoutesConfig($stateProvider, $urlRouterProvider) {
-
     $urlRouterProvider.otherwise('/home');
 
     $stateProvider
@@ -26,14 +25,14 @@
     })
     .state('categories.items', {
       url: '/items/{shortNameOfCategory}',
-      // templateUrl: './src/components/items/items.template.html',
-      // controller: 'MenuAppController as menuapp',
-      component: 'items',
+      templateUrl: './src/items/items.template.html',
+      controller: 'ItemsController as items',
       resolve: {
         itemsList: ['MenuDataService', '$stateParams', function (MenuDataService, $stateParams) {
           return MenuDataService.getItemsForCategory($stateParams.shortNameOfCategory);
         }]
       }
     });
+    
   }
 })();
