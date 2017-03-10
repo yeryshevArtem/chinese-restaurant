@@ -117,6 +117,16 @@ h3.menu-item-title {
 .ng-touched.ng-invalid {
   border: 2px red solid;
 }
+.bg-success,
+.bg-danger {
+  padding: 5px;
+}
+.bg-success {
+  color: green;
+}
+.bg-danger {
+  color: red;
+}
 /* END SINGLE CATEGORY PAGE */
 
 

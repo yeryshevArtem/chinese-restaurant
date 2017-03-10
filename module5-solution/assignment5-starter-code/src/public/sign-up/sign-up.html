@@ -4,8 +4,9 @@
       <label for="firstName">First Name</label>
       <input
         type="text"
+        id="firstName"
         class="form-control"
-        ng-model="userData.firstName"
+        ng-model="signUpCtrl.userData.firstName"
         placeholder="Type your First Name"
         name="firstName"
         required
@@ -24,10 +25,11 @@
     <div class="form-group">
       <label for="lastName">Last Name</label>
       <input
+        id="lastName"
         type="text"
         class="form-control"
         name="lastName"
-        ng-model="userData.lastName"
+        ng-model="signUpCtrl.userData.lastName"
         placeholder="Type your Last Name"
         required
         minlength="4"
@@ -45,10 +47,11 @@
     <div class="form-group">
       <label for="userEmail">Email address</label>
       <input
+        id="userEmail"
         type="email"
         class="form-control"
         name="userEmail"
-        ng-model="userData.email"
+        ng-model="signUpCtrl.userData.email"
         placeholder="Type your phone"
         required>
       <span
@@ -63,7 +66,8 @@
         type="tel"
         class="form-control"
         name="userPhone"
-        ng-model="userData.phone"
+        required
+        ng-model="signUpCtrl.userData.phone"
         placeholder="Phone ###-###-####"
         pattern="(\d{3})-(\d{3})-(\d{4})">
       <span
@@ -73,9 +77,24 @@
     </div>
     <div class="form-group">
       <label for="shortName">Short Name</label>
-      <input type="text" class="form-control" name="shortName" ng-model="userData.shortName" placeholder="Please, type short name your favourite menu dish">
+      <input
+        id="shortName"
+        type="text"
+        class="form-control"
+        name="shortName"
+        ng-model="signUpCtrl.userData.shortName"
+        placeholder="Please, type short name your favourite menu dish">
     </div>
-    <span ng-bind="userData.firstName"></span>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <p
+      class="bg-danger"
+      ng-if="signUpCtrl.status === 'error'">No such menu number exists.</p>
+      <p
+        class="bg-success"
+        ng-if="signUpCtrl.status === 'success'">Your information has been saved.</p>
+    <button
+      type="submit"
+      class="btn btn-default"
+      ng-disabled="userInfo.$invalid"
+      ng-click="signUpCtrl.setItem()">Submit</button>
   </form>
 </div>
