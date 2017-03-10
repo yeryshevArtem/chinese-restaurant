@@ -127,6 +127,12 @@ h3.menu-item-title {
 .bg-danger {
   color: red;
 }
+.user-info {
+  color: black;
+}
+.capitalize {
+   text-transform: capitalize;
+}
 /* END SINGLE CATEGORY PAGE */
 
 

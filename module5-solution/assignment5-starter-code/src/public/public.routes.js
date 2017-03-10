@@ -15,9 +15,16 @@ function routeConfig ($stateProvider) {
       absract: true,
       templateUrl: 'src/public/public.html'
     })
-    .state('public.home', {
+    .state('public.userinfo', {
       url: '/',
-      templateUrl: 'src/public/home/home.html'
+      templateUrl: 'src/public/userinfo/userinfo.html',
+      controller: 'UserInfoController',
+      controllerAs: 'userInfoCtrl',
+      resolve: {
+        userDetailInfo: ['UserInfoService', function (UserInfoService) {
+          return UserInfoService.getUserInfo();
+        }]
+      }
     })
     .state('public.menu', {
       url: '/menu',
