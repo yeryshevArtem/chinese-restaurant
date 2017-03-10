@@ -16,7 +16,7 @@ function routeConfig ($stateProvider) {
       templateUrl: 'src/public/public.html'
     })
     .state('public.userinfo', {
-      url: '/',
+      url: '/user-info',
       templateUrl: 'src/public/userinfo/userinfo.html',
       controller: 'UserInfoController',
       controllerAs: 'userInfoCtrl',
@@ -27,7 +27,7 @@ function routeConfig ($stateProvider) {
       }
     })
     .state('public.menu', {
-      url: '/menu',
+      url: '/',
       templateUrl: 'src/public/menu/menu.html',
       controller: 'MenuController',
       controllerAs: 'menuCtrl',
