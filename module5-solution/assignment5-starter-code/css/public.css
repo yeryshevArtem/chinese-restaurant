@@ -127,11 +127,22 @@ h3.menu-item-title {
 .bg-danger {
   color: red;
 }
-.user-info {
-  color: black;
+.list-group-item {
+  border: 1px solid;
+  background-color: #61122f;
 }
+/*.user-info {
+  color: black;
+}*/
 .capitalize {
    text-transform: capitalize;
+}
+.register-section {
+  width: 50%;
+  margin: 0 auto;
+}
+.key-for-option {
+  font-weight: bold;
 }
 /* END SINGLE CATEGORY PAGE */
 

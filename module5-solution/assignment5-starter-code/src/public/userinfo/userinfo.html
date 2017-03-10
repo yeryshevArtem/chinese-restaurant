@@ -2,9 +2,9 @@
   <div class="user-info" ng-if="userInfoCtrl.detailInfo !== null">
     <ul class="list-group">
       <li class="list-group-item" ng-repeat="(key, field) in userInfoCtrl.detailInfo">
-        <span ng-show="!$last"><span class="capitalize">{{key}}</span>: {{field}}</span>
-        <p ng-show="$last">Dish name: {{field.name}}</p>
-        <p ng-show="$last">Description: {{field.description}}</p>
+        <span ng-show="!$last"><span class="capitalize key-for-option">{{key}}</span>: {{field}}</span>
+        <p ng-show="$last"><span class="key-for-option">Dish name</span>: {{field.name}}</p>
+        <p ng-show="$last"><span class="key-for-option">Description</span>: {{field.description}}</p>
         <img ng-show="$last" ng-src="{{userInfoCtrl.apiPath}}/images/{{field.short_name}}.jpg" alt="">
       </li>
     </ul>

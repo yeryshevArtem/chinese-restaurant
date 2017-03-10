@@ -1,102 +1,104 @@
 <div class="container">
-  <form name="userInfo">
-    <div class="form-group">
-      <label for="firstName">First Name</label>
-      <input
-        type="text"
-        id="firstName"
-        class="form-control"
-        ng-model="signUpCtrl.userData.firstName"
-        placeholder="Type your First Name"
-        name="firstName"
-        required
-        minlength="4"
-        ng-maxlength="10">
-      <span
-        ng-if="(userInfo.firstName.$error.minlength || userInfo.firstName.$error.required) &&
-        userInfo.firstName.$touched">
-        First Name must be at least 4 characters long
-      </span>
-      <span
-        ng-if="userInfo.firstName.$error.maxlength && userInfo.firstName.$touched">
-        First Name must not be a longer than 10 characters
-      </span>
-    </div>
-    <div class="form-group">
-      <label for="lastName">Last Name</label>
-      <input
-        id="lastName"
-        type="text"
-        class="form-control"
-        name="lastName"
-        ng-model="signUpCtrl.userData.lastName"
-        placeholder="Type your Last Name"
-        required
-        minlength="4"
-        ng-maxlength="10">
-      <span
-        ng-if="(userInfo.lastName.$error.minlength || userInfo.lastName.$error.required) &&
-        userInfo.lastName.$touched">
-        Last Name must be at least 4 characters long
-      </span>
-      <span
-        ng-if="userInfo.lastName.$error.maxlength && userInfo.lastName.$touched">
-        Last Name must not be a longer than 10 characters
-      </span>
-    </div>
-    <div class="form-group">
-      <label for="userEmail">Email address</label>
-      <input
-        id="userEmail"
-        type="email"
-        class="form-control"
-        name="userEmail"
-        ng-model="signUpCtrl.userData.email"
-        placeholder="Type your phone"
-        required>
-      <span
-        ng-if="userInfo.userEmail.$invalid && userInfo.userEmail.$touched">
-        Must be a valid email address: handle@domain format
-      </span>
-    </div>
-    <div class="form-group">
-      <label for="phone">Phone number</label>
-      <input
-        id="phone"
-        type="tel"
-        class="form-control"
-        name="userPhone"
-        required
-        ng-model="signUpCtrl.userData.phone"
-        placeholder="Phone ###-###-####"
-        pattern="(\d{3})-(\d{3})-(\d{4})">
-      <span
-        ng-if="userInfo.userPhone.$invalid && userInfo.userPhone.$touched">
-        Phone must be in the format ###-###-####.
-      </span>
-    </div>
-    <div class="form-group">
-      <label for="shortName">Short Name</label>
-      <input
-        id="shortName"
-        type="text"
-        class="form-control"
-        name="shortName"
-        ng-model="signUpCtrl.userData.shortName"
-        placeholder="Please, type short name your favourite menu dish">
-    </div>
-    <div
-      class="alert alert-danger"
-      role="alert"
-      ng-if="signUpCtrl.status === 'error'">No such menu number exists.</div>
+  <div class="register-section">
+    <form name="userInfo">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          class="form-control"
+          ng-model="signUpCtrl.userData.firstName"
+          placeholder="Type your First Name"
+          name="firstName"
+          required
+          minlength="4"
+          ng-maxlength="10">
+        <span
+          ng-if="(userInfo.firstName.$error.minlength || userInfo.firstName.$error.required) &&
+          userInfo.firstName.$touched">
+          First Name must be at least 4 characters long
+        </span>
+        <span
+          ng-if="userInfo.firstName.$error.maxlength && userInfo.firstName.$touched">
+          First Name must not be a longer than 10 characters
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input
+          id="lastName"
+          type="text"
+          class="form-control"
+          name="lastName"
+          ng-model="signUpCtrl.userData.lastName"
+          placeholder="Type your Last Name"
+          required
+          minlength="4"
+          ng-maxlength="10">
+        <span
+          ng-if="(userInfo.lastName.$error.minlength || userInfo.lastName.$error.required) &&
+          userInfo.lastName.$touched">
+          Last Name must be at least 4 characters long
+        </span>
+        <span
+          ng-if="userInfo.lastName.$error.maxlength && userInfo.lastName.$touched">
+          Last Name must not be a longer than 10 characters
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="userEmail">Email address</label>
+        <input
+          id="userEmail"
+          type="email"
+          class="form-control"
+          name="userEmail"
+          ng-model="signUpCtrl.userData.email"
+          placeholder="Type your phone"
+          required>
+        <span
+          ng-if="userInfo.userEmail.$invalid && userInfo.userEmail.$touched">
+          Must be a valid email address: handle@domain format
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone number</label>
+        <input
+          id="phone"
+          type="tel"
+          class="form-control"
+          name="userPhone"
+          required
+          ng-model="signUpCtrl.userData.phone"
+          placeholder="Phone ###-###-####"
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+        <span
+          ng-if="userInfo.userPhone.$invalid && userInfo.userPhone.$touched">
+          Phone must be in the format ###-###-####.
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="shortName">Short Name</label>
+        <input
+          id="shortName"
+          type="text"
+          class="form-control"
+          name="shortName"
+          ng-model="signUpCtrl.userData.shortName"
+          placeholder="Please, type short name your favourite menu dish">
+      </div>
       <div
-        class="alert alert-success"
+        class="alert alert-danger"
         role="alert"
-        ng-if="signUpCtrl.status === 'success'">Your information has been saved.</div>
-    <button
-      type="submit"
-      class="btn btn-default"
-      ng-disabled="userInfo.$invalid"
-      ng-click="signUpCtrl.getMenuItemDetail()">Submit</button>
-  </form>
+        ng-if="signUpCtrl.status === 'error'">No such menu number exists.</div>
+        <div
+          class="alert alert-success"
+          role="alert"
+          ng-if="signUpCtrl.status === 'success'">Your information has been saved.</div>
+      <button
+        type="submit"
+        class="btn btn-default"
+        ng-disabled="userInfo.$invalid"
+        ng-click="signUpCtrl.getMenuItemDetail()">Submit</button>
+    </form>    
+  </div>
 </div>
