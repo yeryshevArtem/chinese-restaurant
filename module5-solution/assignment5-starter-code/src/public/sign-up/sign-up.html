@@ -53,7 +53,7 @@
           class="form-control"
           name="userEmail"
           ng-model="signUpCtrl.userData.email"
-          placeholder="Type your phone"
+          placeholder="Type your email"
           required>
         <span
           ng-if="userInfo.userEmail.$invalid && userInfo.userEmail.$touched">
@@ -78,6 +78,7 @@
       <div class="form-group">
         <label for="shortName">Short Name</label>
         <input
+          ng-class="{'ng-touched ng-invalid': signUpCtrl.status === 'error', 'ng-touched ng-valid': signUpCtrl.status === 'success'}"
           id="shortName"
           type="text"
           class="form-control"
@@ -85,6 +86,7 @@
           ng-model="signUpCtrl.userData.shortName"
           placeholder="Please, type short name your favourite menu dish">
       </div>
+      <span>{{signUpCtrl.userData.shortName}}</span>
       <div
         class="alert alert-danger"
         role="alert"

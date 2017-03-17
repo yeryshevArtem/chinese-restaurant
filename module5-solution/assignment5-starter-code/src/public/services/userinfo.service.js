@@ -12,18 +12,20 @@
     userInfo.setUserInfo = function(userDetail) {
       userDetailInfo = userDetail;
     }
-    
-    userInfo.getMenuItem = function(categoryShortName) {
-      var config = {
-        method: 'GET',
-        url: ApiPath + '/menu_items/' + categoryShortName + '.json'
-      };
-      return $http(config).then(function(result) {
 
-        return result.data;
-      }).catch(function(error) {
-        return error.data;
-      });
+    userInfo.getMenuItem = function(categoryShortName) {
+      if (categoryShortName !== '') {
+        var config = {
+          method: 'GET',
+          url: ApiPath + '/menu_items/' + categoryShortName + '.json'
+        };
+        return $http(config).then(function(result) {
+
+          return result.data;
+        }).catch(function(error) {
+          return error.data;
+        });        
+      }
     }
 
     userInfo.getUserInfo = function() {
