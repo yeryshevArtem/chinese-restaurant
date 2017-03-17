@@ -12,6 +12,7 @@
     userInfo.setUserInfo = function(userDetail) {
       userDetailInfo = userDetail;
     }
+    
     userInfo.getMenuItem = function(categoryShortName) {
       var config = {
         method: 'GET',
@@ -24,8 +25,8 @@
         return error.data;
       });
     }
-    userInfo.getUserInfo = function() {
 
+    userInfo.getUserInfo = function() {
       if (UtilsService.checkForPresenceAttrs(userDetailInfo) === 0) {
         return null;
       } else {

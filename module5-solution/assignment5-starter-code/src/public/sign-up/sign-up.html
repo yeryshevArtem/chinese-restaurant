@@ -16,11 +16,11 @@
         <span
           ng-if="(userInfo.firstName.$error.minlength || userInfo.firstName.$error.required) &&
           userInfo.firstName.$touched">
-          First Name must be at least 4 characters long
+          First Name must be at least 4 characters long.
         </span>
         <span
           ng-if="userInfo.firstName.$error.maxlength && userInfo.firstName.$touched">
-          First Name must not be a longer than 10 characters
+          First Name must not be a longer than 10 characters.
         </span>
       </div>
       <div class="form-group">
@@ -38,11 +38,11 @@
         <span
           ng-if="(userInfo.lastName.$error.minlength || userInfo.lastName.$error.required) &&
           userInfo.lastName.$touched">
-          Last Name must be at least 4 characters long
+          Last Name must be at least 4 characters long.
         </span>
         <span
           ng-if="userInfo.lastName.$error.maxlength && userInfo.lastName.$touched">
-          Last Name must not be a longer than 10 characters
+          Last Name must not be a longer than 10 characters.
         </span>
       </div>
       <div class="form-group">
@@ -57,7 +57,7 @@
           required>
         <span
           ng-if="userInfo.userEmail.$invalid && userInfo.userEmail.$touched">
-          Must be a valid email address: handle@domain format
+          Must be a valid email address: handle@domain format.
         </span>
       </div>
       <div class="form-group">
@@ -99,6 +99,6 @@
         class="btn btn-default"
         ng-disabled="userInfo.$invalid"
         ng-click="signUpCtrl.getMenuItemDetail()">Submit</button>
-    </form>    
+    </form>
   </div>
 </div>
