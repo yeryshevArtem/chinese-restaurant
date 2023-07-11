@@ -1,9 +1,0 @@
-<ul class="found-list">
-  <li ng-repeat="item in foundItems.found">
-    <p><span class="attr-name">Name</span>: {{ item.name }}</p>
-    <p><span class="attr-name">Shortname</span>: {{ item.short_name }}</p>
-    <p><span class="attr-name">Description</span>: {{ item.description }}</p>
-    <p><button class="btn btn-danger" ng-click="foundItems.onRemove({index: $index});">Don't want this one!</button></p>
-  </li>
-</ul>
-<div class="alert bg-danger" ng-if="foundItems.checkFoundList()">Nothing found!</div>
